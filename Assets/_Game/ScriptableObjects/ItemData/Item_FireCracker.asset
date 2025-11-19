@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0325765825a9c4c17a2b81bda3e09547, type: 3}
+  m_Name: Item_FireCracker
+  m_EditorClassIdentifier: 
+  itemName: "\uD3ED\uC8FD"
+  prefab: {fileID: 6629016992711999683, guid: 4782e592a1ee54cfcb20a5af5e974d57, type: 3}
+  description: "\uC0AC\uC6A9 \uC2DC \uADA4\uC801\uC744 \uB530\uB77C \uB0A0\uC544\uAC00
+    \uC7A0\uC2DC \uD6C4 \uD130\uC9D1\uB2C8\uB2E4.\n\uD130\uC9C0\uB294 \uB3D9\uC548\uC5D0\uB294
+    \uC12C\uAD11\uACFC \uD070 \uC18C\uB9AC\uB97C \uB0C5\uB2C8\uB2E4.\n"
