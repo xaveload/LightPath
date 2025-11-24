@@ -15,7 +15,3 @@ MonoBehaviour:
   id: Altar
   type: 2
   prefab: {fileID: 4907796560854255262, guid: 131971ae6a3794794bc689a30c31f3b0, type: 3}
-  width: 4
-  height: 4
-  possibleDoorSpots: []
-  canBeSliding: 

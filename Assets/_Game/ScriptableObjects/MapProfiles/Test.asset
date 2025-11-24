@@ -12,17 +12,78 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e2d1deca985a469b92a9d8d8f42632d, type: 3}
   m_Name: Test
   m_EditorClassIdentifier: 
-  mapWidth: 100
-  mapHeight: 100
+  layoutType: 1
+  mapWidth: 175
+  mapHeight: 175
   unitSize: 3
-  totalRoomCount: 100
-  roomClusterChance: 0.2
-  minDistanceFromStart: 10
+  totalRoomCount: 175
+  escapeRoomCount: 10
+  altarRoomCount: 10
+  roomClusterChance: 0.125
+  minDistanceFromStart: 5
+  roomRingChance: 0.2
   availableRooms:
   - {fileID: 11400000, guid: ca09b54fc3a3143a4b10af4cf678ffb7, type: 2}
   - {fileID: 11400000, guid: ac88cc54782594bb29fdc029fd614af6, type: 2}
   - {fileID: 11400000, guid: d7bdca5181a864e358eee3f9a4a034e9, type: 2}
-  altarRoomCount: 10
-  allowEscapeRoomCluster: 0
-  escapeRoomCount: 3
-  minDistanceBetweenEscapes: 70
+  useOuterLoop: 0
+  useTextureGuide: 0
+  guideTexture: {fileID: 2800000, guid: fcce7a19609c043bb94de35ba58f2c98, type: 3}
+  guideAlphaThreshold: 0.063
+  gridDivisionX: 0
+  gridDivisionY: 0
+  gridOffsetRange: 3
+  pathStraightLimit: 50
+  guideLineDiscount: 10
+  longPathProb: 0.3
+  distanceVariance: 0.8
+  minSocketDistance: 2
+  existingPathCost: 5
+  branchingAttempts: 614
+  extraConnectionChance: 0.201
+  wideCorridorChance: 0.295
+  corridorDoorChance: 0.1
+  corridorDoorDistance: 5
+  extraDoorCountChances: []
+  doubleDoorChance: 0.282
+  corridorFloorBasic: {fileID: 8931965484118125728, guid: bb3f1813439cd48b383048ca9bf2c312, type: 3}
+  corridorFloorDecos: []
+  floorDecoChance: 0.2
+  corridorFloorOffset: {x: 1.5, y: 0, z: 1.5}
+  ceilingObjects:
+  - prefab: {fileID: 8795449041699217416, guid: 7c1606d961396433bad5eca6423fd8bd, type: 3}
+    weight: 1
+  lightHeight: 3.5
+  minLightSpacing: 3
+  lightSpawnChance: 0.8
+  corridorWallBasic:
+    prefab: {fileID: 4121002527141338097, guid: e1f10c0a526b342a18f8e56d7f088452, type: 3}
+    size: 1
+    chance: 1
+  wallPrefabs: []
+  swingDoors:
+  - prefab: {fileID: 1015084052598105893, guid: 5913b4802e3e34b049a0234fa54a6231, type: 3}
+    weight: 1
+    roomSpawn: 1
+    corridorSpawn: 1
+  - prefab: {fileID: 3532461136932066373, guid: b137de38d6b0b4b7cbd6f09c7d48cbeb, type: 3}
+    weight: 1
+    roomSpawn: 1
+    corridorSpawn: 1
+  doubleDoors:
+  - prefab: {fileID: 3519427379140278554, guid: 14cfd0e96a6124f62a927f8f4a246b1d, type: 3}
+    weight: 1
+    roomSpawn: 1
+    corridorSpawn: 1
+  useFixedStartPos: 1
+  fixedStartGridPos: {x: 85, y: 0}
+  fixedLayoutRooms:
+  - roomData: {fileID: 11400000, guid: a98d76190bbdc47418a3808f993a577b, type: 2}
+    position: {x: 10, y: 10}
+    rotationAngle: 0
+  reservedSpaces:
+  - region:
+      x: 143
+      y: 143
+      width: 30
+      height: 30

@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2284f2a566b5645fa9dbda083b4f1da2, type: 3}
+  m_Name: Special_FixTest
+  m_EditorClassIdentifier: 
+  id: FixRoomTest
+  type: 4
+  prefab: {fileID: 4907796560854255262, guid: a19866b5961e5426baabac84ae4f3b1b, type: 3}

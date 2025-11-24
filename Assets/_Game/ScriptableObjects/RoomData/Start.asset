@@ -14,8 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: start
   type: 1
-  prefab: {fileID: 1824279104038938470, guid: b7114a18eceb3454f8e4447bc4f68eba, type: 3}
-  width: 4
-  height: 4
-  possibleDoorSpots: []
-  canBeSliding: 
+  prefab: {fileID: 4907796560854255262, guid: 16481c0c096ab48b59e7bc3f99145469, type: 3}

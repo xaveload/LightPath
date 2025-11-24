@@ -36,7 +36,7 @@ namespace LightPath.Core
             // 리플레이나 특정 상황 재현을 원할 경우 useRandomSeedOnPlay를 끄고 globalSeed를 고정합니다.
             if (useRandomSeedOnPlay)
             {
-                globalSeed = System.Environment.TickCount;
+                globalSeed = Random.Range(1, 2147483647);
             }
             
             CoreRandom.Initialize(globalSeed);

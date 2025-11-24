@@ -12,10 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2284f2a566b5645fa9dbda083b4f1da2, type: 3}
   m_Name: Normal
   m_EditorClassIdentifier: 
-  id: Normal_44
+  id: Normal_33
   type: 0
-  prefab: {fileID: 1824279104038938470, guid: 34d657a1fdfeb44bfb9badaf3b043c4a, type: 3}
-  width: 4
-  height: 4
-  possibleDoorSpots: []
-  canBeSliding: 
+  prefab: {fileID: 4907796560854255262, guid: 579797f1890ae48d296ffc8f03703039, type: 3}
