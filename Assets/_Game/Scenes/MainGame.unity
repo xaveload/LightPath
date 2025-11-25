@@ -1208,7 +1208,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b497a93b7c3cc4f8e97900b603d67e02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  globalSeed: 46056030
+  globalSeed: 88032360
   useRandomSeedOnPlay: 0
 --- !u!4 &1566134277
 Transform:

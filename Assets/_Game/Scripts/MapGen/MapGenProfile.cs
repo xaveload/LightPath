@@ -5,9 +5,9 @@ namespace LightPath.MapGen
 {
     public enum MapLayoutType
     {
-        SpiderWeb = 0,  // 거미줄 (복잡, 랜덤)
-        Subway = 1,     // 지하철 (선형, 긴 복도)
-        AntHill = 2     // 개미굴 (군집, 밀집)
+        SpiderWeb = 0,  // 거미줄 (무작위 방이 동시에 지점 연결)
+        Subway = 1,     // 지하철 (이전 방에서 1대1 지점을 정해 연결)
+        AntHill = 2     // 개미굴 (중앙부터 지점 연결)
     }
     
     [CreateAssetMenu(fileName = "NewMapProfile", menuName = "LightPath/Map Profile")]
@@ -22,13 +22,16 @@ namespace LightPath.MapGen
         [Header("기본 방 설정")]
         [Tooltip("생성할 총 방의 개수")] public int totalRoomCount = 50;
         [Tooltip("총 방 중 탈출구(Escape) 방의 개수")] public int escapeRoomCount = 5;
+        [Tooltip("각 탈출구 방 사이에 떨어져 있어야 할 최소 거리")] public int minDistBetweenEscapes = 50;
         [Tooltip("총 방 중 제단(Altar) 방의 개수")] public int altarRoomCount = 5;
+        [Tooltip("각 제단 방 사이에 떨어져 있어야 할 최소 거리")] public int minDistBetweenAltars = 20;
         [Tooltip("방들이 서로 붙어서 생성될 확률 (0~1)")] [Range(0f, 1f)] public float roomClusterChance = 0.1f;
         [Tooltip("시작 방으로부터 다른 방들이 떨어져 있어야 하는 최소 거리")] public int minDistanceFromStart = 5;
         
         [Header("방 특이성 설정")]
         [Tooltip("방 주변에 복도를 두를 확률")] [Range(0f, 1f)] public float roomRingChance = 0.2f; 
-
+        [Tooltip("방 하나에 기본 문 외에 추가 문이 생길 확률 리스트 (인덱스 0: 2개, 1: 3개...)")] [Range(0f, 1f)] public List<float> extraDoorCountChances; 
+        [Tooltip("2칸 이상의 가능한 문 소켓 뭉치에서 이중 문이 생성될 가중치")] public float doubleDoorChance = 0.5f;
         [Tooltip("생성 가능한 방 데이터 목록")] public List<RoomData> availableRooms;
 
         [Header("최외곽, 그리드 보정")]
@@ -49,9 +52,6 @@ namespace LightPath.MapGen
         [Tooltip("그리드 가이드 라인 위치의 랜덤 오차 범위 (+- 칸수)")] public int gridOffsetRange = 20;
 
         [Tooltip("복도가 직선으로 뻗을 수 있는 최대 칸수 (초과 시 꺾임)")] public int pathStraightLimit = 15;
-        // [Tooltip("pathStraightLimit에 도달하고 방향을 꺾을 때 무조건 가야 하는 거리 (높을수록 크게 꺾음)")] public int minStraightLength = 1;
-
-        // [Tooltip("근처에 방이 있을 때 경로를 유도할 감지 거리")] public int roomAttractionRange = 2;
 
         [Tooltip("그리드 형태 보존성 (가이드 라인을 따를 때 이동 비용 할인량)")] public int guideLineDiscount = 3;
         
@@ -68,10 +68,6 @@ namespace LightPath.MapGen
         [Tooltip("복도를 2칸 너비로 확장할 확률")] [Range(0f, 1f)] public float wideCorridorChance = 0.4f;
         [Tooltip("복도 중간에 문을 설치할 확률")] [Range(0f, 1f)] public float corridorDoorChance = 0.1f;
         [Tooltip("복도 문 사이의 최소 거리")] public int corridorDoorDistance = 5;
-
-        [Header("문 생성 로직")]
-        [Tooltip("방 하나에 기본 문 외에 추가 문이 생길 확률 리스트 (인덱스 0: 2개, 1: 3개...)")] [Range(0f, 1f)] public List<float> extraDoorCountChances; 
-        [Tooltip("2칸 이상의 소켓 뭉치에서 실제로 양방향 문이 생성될 확률")] [Range(0f, 1f)] public float doubleDoorChance = 0.5f;
 
         [Header("바닥 설정")]
         [Tooltip("기본 복도 바닥 프리팹")] public GameObject corridorFloorBasic;
@@ -108,7 +104,9 @@ namespace LightPath.MapGen
     { 
         [Tooltip("생성할 벽 프리팹")] public GameObject prefab; 
         [Tooltip("해당 벽이 차지하는 가로 칸 수")] public int size = 1; 
-        [Tooltip("해당 벽이 선택될 가중치")] public float chance = 1f; 
+        [Tooltip("해당 벽이 선택될 가중치")] public float chance = 1f;
+        [Tooltip("기능성 장식 벽인지")] public bool isFunctional = false;
+        [Tooltip("기능성 장식 벽이 맞다면 깊이가 얼만지")] public int depth = 0;
     }
     
     [System.Serializable] 

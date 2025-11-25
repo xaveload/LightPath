@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2466662563671054666}
   - component: {fileID: 3660201785629266417}
   - component: {fileID: 6784992471411450994}
+  - component: {fileID: 1516162351301613196}
   m_Layer: 7
   m_Name: Wall (9)
   m_TagString: Untagged
@@ -352,6 +353,20 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!114 &1516162351301613196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 286264792952207390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d433c0c7ed2c4ab2b71d5471a7c2329, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isSlidingCandidate: 0
+  hasPreplacedDoor: 0
 --- !u!1 &664435770845793236
 GameObject:
   m_ObjectHideFlags: 0
@@ -366,6 +381,7 @@ GameObject:
   - component: {fileID: 2600790722618143592}
   - component: {fileID: 5290605215106344154}
   - component: {fileID: 1718154908164108073}
+  - component: {fileID: 6290837901761466838}
   m_Layer: 7
   m_Name: Wall (8)
   m_TagString: Untagged
@@ -381,13 +397,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 664435770845793236}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0.049999055, y: 2, z: 1.499999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3695289536090961109}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!114 &3551576665923095807
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -704,6 +720,20 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!114 &6290837901761466838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 664435770845793236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d433c0c7ed2c4ab2b71d5471a7c2329, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isSlidingCandidate: 0
+  hasPreplacedDoor: 0
 --- !u!1 &777243665088750295
 GameObject:
   m_ObjectHideFlags: 0
@@ -1832,6 +1862,7 @@ GameObject:
   - component: {fileID: 2730767905671156832}
   - component: {fileID: 267213708542858122}
   - component: {fileID: 5203086146160700474}
+  - component: {fileID: 3287051843843187776}
   m_Layer: 7
   m_Name: Wall (10)
   m_TagString: Untagged
@@ -2170,6 +2201,20 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!114 &3287051843843187776
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2429895653183833511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d433c0c7ed2c4ab2b71d5471a7c2329, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isSlidingCandidate: 0
+  hasPreplacedDoor: 0
 --- !u!1 &2458171192505463090
 GameObject:
   m_ObjectHideFlags: 0
@@ -3748,6 +3793,24 @@ MonoBehaviour:
   - pos: {x: 2, y: 2}
     dir: {x: 0, y: 1}
     canBeSliding: 0
+  - pos: {x: 0, y: 2}
+    dir: {x: -1, y: 0}
+    canBeSliding: 0
+  - pos: {x: 0, y: 1}
+    dir: {x: -1, y: 0}
+    canBeSliding: 0
+  - pos: {x: 0, y: 0}
+    dir: {x: -1, y: 0}
+    canBeSliding: 0
+  - pos: {x: 2, y: 2}
+    dir: {x: 1, y: 0}
+    canBeSliding: 0
+  - pos: {x: 2, y: 1}
+    dir: {x: 1, y: 0}
+    canBeSliding: 0
+  - pos: {x: 2, y: 0}
+    dir: {x: 1, y: 0}
+    canBeSliding: 0
 --- !u!114 &3498735810889742926
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3779,6 +3842,7 @@ GameObject:
   - component: {fileID: 23712517365139918}
   - component: {fileID: 6643695033964356982}
   - component: {fileID: 6844947582018766951}
+  - component: {fileID: 5691358740532656591}
   m_Layer: 7
   m_Name: Wall (7)
   m_TagString: Untagged
@@ -3794,13 +3858,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5485633515370660566}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0.04999953, y: 2, z: 4.4999995}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3695289536090961109}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!114 &6831504111094737462
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4117,6 +4181,20 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!114 &5691358740532656591
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5485633515370660566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d433c0c7ed2c4ab2b71d5471a7c2329, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isSlidingCandidate: 0
+  hasPreplacedDoor: 0
 --- !u!1 &5520836114072480427
 GameObject:
   m_ObjectHideFlags: 0
@@ -4131,6 +4209,7 @@ GameObject:
   - component: {fileID: 163971614214665985}
   - component: {fileID: 5217488434902342575}
   - component: {fileID: 4087611731099131423}
+  - component: {fileID: 4893647146563189408}
   m_Layer: 7
   m_Name: Wall (11)
   m_TagString: Untagged
@@ -4469,6 +4548,20 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!114 &4893647146563189408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5520836114072480427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d433c0c7ed2c4ab2b71d5471a7c2329, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isSlidingCandidate: 0
+  hasPreplacedDoor: 0
 --- !u!1 &6469617099945199682
 GameObject:
   m_ObjectHideFlags: 0
@@ -5554,6 +5647,7 @@ GameObject:
   - component: {fileID: 1531430821181534305}
   - component: {fileID: 3696341019045589767}
   - component: {fileID: 3520480278116787051}
+  - component: {fileID: 2957345055207146520}
   m_Layer: 7
   m_Name: Wall (6)
   m_TagString: Untagged
@@ -5569,13 +5663,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7632155481925464009}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0.04999977, y: 2, z: 7.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3695289536090961109}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!114 &8479734373103968743
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5892,6 +5986,20 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!114 &2957345055207146520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7632155481925464009}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d433c0c7ed2c4ab2b71d5471a7c2329, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isSlidingCandidate: 0
+  hasPreplacedDoor: 0
 --- !u!1 &7785988547268393945
 GameObject:
   m_ObjectHideFlags: 0
